@@ -125,19 +125,21 @@ console.log(animalName(null));
 
 /* 5 - Crie uma interface Carro com as propriedades marca, modelo e ano. Em seguida, crie um alias CarroOuMoto para o tipo Carro | { marca: string, modelo: string, ano: number, cilindradas: number }. Em seguida, crie uma função que recebe um CarroOuMoto e retorna uma string com as informações do veículo.*/
 
-interface Car{
-  marca: string
-  modelo: number
-  age: number
+interface Carro {
+  marca: string;
+  modelo: string;
+  ano: number;
 }
 
-type CarroOuMoto = Car | { marca: string, modelo: string, ano: number, cilindradas: number }
+type CarroOuMoto = Carro | { marca: string, modelo: string, ano: number, cilindradas: number };
 
-const carroOuMotoInfos = (carroOuMoto : CarroOuMoto ) : string => {
-  return carroOuMoto;
+function informacoesVeiculo(veiculo: CarroOuMoto): string {
+  if ("cilindradas" in veiculo) {
+    return `Moto: ${veiculo.marca} ${veiculo.modelo} ${veiculo.ano} ${veiculo.cilindradas}cc`;
+  } else {
+    return `Carro: ${veiculo.marca} ${veiculo.modelo} ${veiculo.ano}`;
+  }
 }
-
-console.log(typeof CarroOuMoto);
   
 /* 6 - Crie uma interface Produto com as propriedades nome, preco e quantidade. Em seguida, crie um alias ProdutoComDesconto para o tipo Produto & { desconto: number }. Em seguida, crie uma função que recebe um ProdutoComDesconto e retorna uma string com o nome e o preço do produto com o desconto aplicado.*/
 
