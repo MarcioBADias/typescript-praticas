@@ -143,6 +143,53 @@ function informacoesVeiculo(veiculo: CarroOuMoto): string {
   
 /* 6 - Crie uma interface Produto com as propriedades nome, preco e quantidade. Em seguida, crie um alias ProdutoComDesconto para o tipo Produto & { desconto: number }. Em seguida, crie uma função que recebe um ProdutoComDesconto e retorna uma string com o nome e o preço do produto com o desconto aplicado.*/
 
+interface Produto {
+  nome: string;
+  preco: number;
+  quantidade: number;
+}
+
+type ProdutoComDesconto = Produto & { desconto: number };
+
+function calcularPrecoComDesconto(produto: ProdutoComDesconto): string {
+  const precoComDesconto = produto.preco * (1 - produto.desconto / 100);
+  return `Produto: ${produto.nome}. Preço com desconto: R$${precoComDesconto.toFixed(2)}.`;
+}
+
+
 /* 7 - Crie uma interface Endereco com as propriedades rua, numero, complemento, cidade, estado e cep. Em seguida, crie um alias EnderecoCompleto para o tipo Endereco & { pais: string }. Em seguida, crie uma função que recebe um EnderecoCompleto e retorna uma string com o endereço completo, incluindo o país.*/
 
+interface Endereco {
+  rua: string;
+  numero: number;
+  complemento?: string;
+  cidade: string;
+  estado: string;
+  cep: string;
+}
+
+type EnderecoCompleto = Endereco & { pais: string };
+
+function obterEnderecoCompleto(endereco: EnderecoCompleto): string {
+  const enderecoCompleto = `${endereco.rua}, ${endereco.numero}`;
+  if (endereco.complemento) {
+    enderecoCompleto += ` - ${endereco.complemento}`;
+  }
+  enderecoCompleto += `, ${endereco.cidade} - ${endereco.estado}, ${endereco.cep}, ${endereco.pais}.`;
+  return enderecoCompleto;
+}
+
+
 /* 8 - Crie uma interface Usuario com as propriedades nome, email e senha. Em seguida, crie um alias UsuarioSemSenha para o tipo Omit<Usuario, 'senha'>. Em seguida, crie uma função que recebe um UsuarioSemSenha e retorna uma string com o nome e o e-mail do usuário.*/
+
+interface Usuario {
+  nome: string;
+  email: string;
+  senha: string;
+}
+
+type UsuarioSemSenha = Omit<Usuario, 'senha'>;
+
+function exibirNomeEEmail(usuario: UsuarioSemSenha): string {
+  return `Nome: ${usuario.nome}. Email: ${usuario.email}.`;
+}
