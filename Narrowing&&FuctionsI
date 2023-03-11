@@ -1,0 +1,100 @@
+// Narrowing e Functions parte 1
+
+/* 1- Crie uma função em TypeScript que recebe um valor e verifica se ele é do tipo string. Se for, a função deve retornar o valor original em letras maiúsculas. Caso contrário, a função deve retornar o valor original sem modificações.*/
+
+/* 2 - Crie uma função em TypeScript que recebe um array de números e retorna a soma de todos os números ímpares no array.*/
+
+/* 3 - Crie uma função em TypeScript que recebe um objeto com propriedades "firstName" e "lastName" e retorna uma string com o nome completo no formato "firstName lastName".*/
+
+/* 4 - Crie uma função em TypeScript que recebe um array de strings e uma string de busca e retorna um novo array com apenas as strings que contêm a string de busca.*/
+
+/* 5 - Crie uma função genérica em TypeScript que recebe um array e um índice e retorna o valor do array no índice especificado. A função deve garantir que o índice está dentro dos limites do array.*/
+
+/* 6 - Crie uma função genérica em TypeScript que recebe um array e uma função de callback e retorna um novo array com os valores do array original transformados pela função de callback.*/
+
+/* 7 - Crie uma função em TypeScript que recebe um objeto com propriedades "name" e "age" e retorna um objeto com as mesmas propriedades, mas com tipos definidos como string e number, respectivamente.*/
+
+/* 8 - Crie uma função em TypeScript que recebe um número e uma função de callback que recebe um número e retorna um número, e retorna o resultado da função de callback aplicada ao número de entrada.*/
+
+/* 9 - Crie uma função em TypeScript que recebe um objeto com propriedades "name" e "age", mas pode ter propriedades adicionais, e retorna um objeto apenas com as propriedades "name" e "age".*/
+
+
+
+
+/* --------------------------------------
+
+R1:
+function uppercaseIfString(value: any): any {
+  if (typeof value === 'string') {
+    return value.toUpperCase();
+  }
+  return value;
+}
+
+R2:
+function sumOddNumbers(numbers: number[]): number {
+  let sum = 0;
+  for (const num of numbers) {
+    if (num % 2 !== 0) {
+      sum += num;
+    }
+  }
+  return sum;
+}
+
+R3:
+interface Person {
+  firstName: string;
+  lastName: string;
+}
+
+function getFullName(person: Person): string {
+  return `${person.firstName} ${person.lastName}`;
+}
+
+R4:
+function filterStringsBySubstring(strings: string[], substring: string): string[] {
+  return strings.filter(str => str.includes(substring));
+}
+
+R5:
+function getValueAtIndex<T>(arr: T[], index: number): T | undefined {
+  if (index >= 0 && index < arr.length) {
+    return arr[index];
+  }
+  return undefined;
+}
+
+R6:
+function mapArray<T, U>(arr: T[], callback: (value: T) => U): U[] {
+  const result: U[] = [];
+  for (const item of arr) {
+    result.push(callback(item));
+  }
+  return result;
+}
+
+R7:
+interface Person {
+  name: string;
+  age: number;
+}
+
+function parsePerson(person: any): Person {
+  return {
+    name: String(person.name),
+    age: Number(person.age),
+  };
+}
+
+R8:
+function applyCallbackToNumber(num: number, callback: (num: number) => number): number {
+  return callback(num);
+}
+
+R9:
+interface Person {
+  name: string;
+  age
+
+*/
