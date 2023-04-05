@@ -95,7 +95,15 @@ function applyCallbackToNumber(num: number, callback: (num: number) => number): 
 R9:
 interface Person {
   name: string;
-  age
+  age: number;
+  [key: string]: any; // permite outras propriedades adicionais
+}
+
+function filterPerson(person: Person): Pick<Person, "name" | "age"> {
+  const { name, age } = person;
+  return { name, age };
+}
+
 
 */
 --------------
