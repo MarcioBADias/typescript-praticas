@@ -80,6 +80,7 @@ interface Person {
   age: number;
 }
 
+
 function parsePerson(person: any): Person {
   return {
     name: String(person.name),
