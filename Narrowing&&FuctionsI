@@ -106,11 +106,5 @@ function filterPerson(person: Person): Pick<Person, "name" | "age"> {
 }
 
 
-
-
-
-
-
-
 */
 --------------
