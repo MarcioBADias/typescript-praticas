@@ -19,8 +19,6 @@
 /* 9 - Crie uma função em TypeScript que recebe um objeto com propriedades "name" e "age", mas pode ter propriedades adicionais, e retorna um objeto apenas com as propriedades "name" e "age".*/
 
 
-
-
 /* --------------------------------------
 
 R1:
