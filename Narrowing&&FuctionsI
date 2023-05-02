@@ -102,5 +102,4 @@ function filterPerson(person: Person): Pick<Person, "name" | "age"> {
   const { name, age } = person;
   return { name, age };
 }
-
 */
