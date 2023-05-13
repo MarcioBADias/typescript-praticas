@@ -1,5 +1,5 @@
 // Narrowing e Functions parte 1
-
+//
 /* 1- Crie uma função em TypeScript que recebe um valor e verifica se ele é do tipo string. Se for, a função deve retornar o valor original em letras maiúsculas. Caso contrário, a função deve retornar o valor original sem modificações.*/
 
 /* 2 - Crie uma função em TypeScript que recebe um array de números e retorna a soma de todos os números ímpares no array.*/
